@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import ProjectsCard from "./projects-card";
+import ProjectsCard from "./project-card";
 import { useRouter } from "next/navigation";
 
 const ProjectGrid = ({ projects }) => {
@@ -10,7 +10,7 @@ const ProjectGrid = ({ projects }) => {
     router.push(`/editor/${projectId}`);
   };
   return (
-    <div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
       {projects.map((project) => (
         <ProjectsCard
           key={project._id}

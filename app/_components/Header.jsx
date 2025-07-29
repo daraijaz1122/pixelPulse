@@ -4,11 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
-import { Button } from "@/components/ui/button";
+
 import { useStoreUserEffect } from "@/hooks/use-store-user-effect";
 import { BarLoader } from "react-spinners";
 import { Authenticated, Unauthenticated } from "convex/react";
 import { LayoutDashboard } from "lucide-react";
+import { Button } from "@/components/ui/button";
 const Header = () => {
   const path = usePathname();
   const { isLoading } = useStoreUserEffect();

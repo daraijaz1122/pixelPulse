@@ -6,9 +6,9 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import { BarLoader } from "react-spinners";
-import { NewProjectModal } from "@/app/_components/NewProjectModel";
-import ProjectGrid from "@/app/_components/project-grid";
-
+import { NewProjectModal } from "@/app/(main)/dashboard/_components/NewProjectModel";
+import ProjectGrid from "@/app/(main)/dashboard/_components/project-grid";
+import EmptyState from "./_components/Empty-State";
 const dashboard = () => {
   const { user } = useUser();
   const [showNewProjectModal, setShowNewProjectModal] = useState(false);
@@ -45,8 +45,7 @@ const dashboard = () => {
         ) : projects && projects.length > 0 ? (
           <ProjectGrid projects={projects} />
         ) : (
-          " rfce"
-          // <EmptyState onCreateProject={() => setShowNewProjectModal(true)} />
+          <EmptyState onCreateProject={() => setShowNewProjectModal(true)} />
         )}
 
         {/* New Project Modal */}

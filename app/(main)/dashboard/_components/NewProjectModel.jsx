@@ -18,7 +18,7 @@ import { useDropzone } from "react-dropzone";
 import { useConvexQuery } from "@/hooks/use-convex-query";
 import { useConvexMutation } from "@/hooks/use-convex-mutation";
 import { usePlanAccess } from "@/hooks/use-plan-access";
-import { UpgradeModal } from "./upgrade-modal";
+import { UpgradeModal } from "../../../_components/upgrade-modal";
 import { api } from "@/convex/_generated/api";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";

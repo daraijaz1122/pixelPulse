@@ -1,12 +1,12 @@
-import { useMutation, useQuery } from "convex/react";
-import React, { useEffect, useState } from "react";
+import { useMutation } from "convex/react";
+import { useState } from "react";
 import { toast } from "sonner";
 
 export const useConvexMutation = (mutation) => {
   const mutationFn = useMutation(mutation);
 
   const [data, setdata] = useState(undefined);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const mutate = async (...args) => {

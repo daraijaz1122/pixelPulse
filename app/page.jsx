@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Header from "./_components/Header";
+
 import HeroSection from "./_components/Hero";
 import Stats from "./_components/Stats";
 import Features from "./_components/Features";
