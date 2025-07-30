@@ -4,7 +4,13 @@ import { Monitor } from "lucide-react";
 import { useParams } from "next/navigation";
 import React, { useState } from "react";
 import { RingLoader } from "react-spinners";
-import Canvas from "../_components/Canvas";
+import { Loader } from "../_components/Loader";
+import { useConvexQuery } from "@/hooks/use-convex-query";
+import { api } from "@/convex/_generated/api";
+import { ErrorMessage } from "../_components/Error";
+import CanvasEditor from "../_components/Canvas";
+import EditorTopBar from "../_components/EditorTopBar";
+import EditorSideBar from "../_components/EditorSideBar";
 
 const page = () => {
   const params = useParams();
@@ -12,6 +18,20 @@ const page = () => {
   const [processingMessage, setProcessingMessage] = useState(null);
   const [activeTool, setActiveTool] = useState("resize");
   const projectId = params.projectId;
+
+  const {
+    data: project,
+    isLoading,
+    error,
+  } = useConvexQuery(api.projects.getProject, { projectId });
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  if (error || !project) {
+    return <ErrorMessage />;
+  }
 
   return (
     <CanvasContext.Provider
@@ -55,10 +75,12 @@ const page = () => {
             </div>
           )}
           {/* top bar */}
+          <EditorTopBar />
           <div className="flex flex-1 overflow-hidden">
             {/* slider */}
+            <EditorSideBar />
             <div className="flex-1 bg-slate-800">
-              <Canvas project={"project"} />
+              <CanvasEditor project={project} />
             </div>
           </div>
         </div>
