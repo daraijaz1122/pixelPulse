@@ -4,9 +4,9 @@ import { api } from "@/convex/_generated/api";
 import { useConvexMutation } from "@/hooks/use-convex-mutation";
 import React, { useEffect, useRef, useState } from "react";
 import { Canvas, FabricImage } from "fabric";
+import { LoadingCanvas } from "./LoadingCanvas";
 
 const CanvasEditor = ({ project }) => {
-  console.log(project);
   const [isLoading, setIsLoading] = useState(true);
   const canvasRef = useRef();
   const containerRef = useRef();
@@ -246,6 +246,7 @@ const CanvasEditor = ({ project }) => {
           backgroundPosition: "0 0, 0 10px, 10px -10px, -10px 0px",
         }}
       />
+      {isLoading && <LoadingCanvas />}
       <div className="px-5">
         <canvas id="canvas" className="border" ref={canvasRef} />
       </div>

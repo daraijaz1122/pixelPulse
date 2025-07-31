@@ -4,7 +4,6 @@ import ProjectsCard from "./project-card";
 import { useRouter } from "next/navigation";
 
 const ProjectGrid = ({ projects }) => {
-  console.log(projects);
   const router = useRouter();
   const handleEditProject = (projectId) => {
     router.push(`/editor/${projectId}`);

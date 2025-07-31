@@ -75,10 +75,10 @@ const page = () => {
             </div>
           )}
           {/* top bar */}
-          <EditorTopBar />
+          <EditorTopBar project={project} />
           <div className="flex flex-1 overflow-hidden">
             {/* slider */}
-            <EditorSideBar />
+            <EditorSideBar project={project} />
             <div className="flex-1 bg-slate-800">
               <CanvasEditor project={project} />
             </div>
