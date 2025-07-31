@@ -1,5 +1,5 @@
 import { useQuery } from "convex/react";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 export const useConvexQuery = (query, ...args) => {

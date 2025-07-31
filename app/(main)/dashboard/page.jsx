@@ -3,15 +3,16 @@ import { api } from "@/convex/_generated/api";
 import { useConvexQuery } from "@/hooks/use-convex-query";
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Plus } from "lucide-react";
-import { BarLoader } from "react-spinners";
+import { Loader2, Plus } from "lucide-react";
 import { NewProjectModal } from "@/app/(main)/dashboard/_components/NewProjectModel";
 import ProjectGrid from "@/app/(main)/dashboard/_components/project-grid";
 import EmptyState from "./_components/Empty-State";
+
 const dashboard = () => {
   const [showNewProjectModal, setShowNewProjectModal] = useState(false);
+
   const { data: projects, isLoading } = useConvexQuery(
-    api?.projects?.getUserProjects
+    api.projects.getUserProjects
   );
 
   return (
@@ -39,7 +40,7 @@ const dashboard = () => {
         {isLoading ? (
           <div className="flex items-center justify-center py-20">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-400">
-              <BarLoader />
+              <Loader2 className="h-16 w-16 animate-spin" />
             </div>
           </div>
         ) : projects && projects.length > 0 ? (
