@@ -30,6 +30,7 @@ import { api } from "@/convex/_generated/api";
 import { useConvexQuery } from "@/hooks/use-convex-query";
 import { UpgradeModal } from "@/app/_components/upgrade-modal";
 import { FabricImage } from "fabric";
+import { toast } from "sonner";
 const EditorTopBar = ({ project }) => {
   const router = useRouter();
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
