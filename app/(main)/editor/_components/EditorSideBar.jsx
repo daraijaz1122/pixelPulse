@@ -9,7 +9,6 @@ const EditorSideBar = ({ project }) => {
     return null;
   }
   const Icon = toolConfig.icon;
-  console.log(activeTool, "active tool");
 
   return (
     <div className="min-w-96 border-r flex flex-col">

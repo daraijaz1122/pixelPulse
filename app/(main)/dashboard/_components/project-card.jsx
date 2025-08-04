@@ -8,7 +8,6 @@ import { Badge } from "@/components/ui/badge";
 import React from "react";
 import { formatDistanceToNow } from "date-fns";
 import { toast } from "sonner";
-import Image from "next/image";
 
 const ProjectsCard = ({ project, onEdit }) => {
   const { mutate: deleteProject, isLoading } = useConvexMutation(

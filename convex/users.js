@@ -4,10 +4,13 @@ import { v } from "convex/values";
 export const store = mutation({
   args: {},
   handler: async (ctx) => {
+   
     const identity = await ctx.auth.getUserIdentity();
+    
     if (!identity) {
       throw new Error("Called storeUser without authentication present");
     }
+    
 
     // Check if we've already stored this identity before
     const user = await ctx.db
@@ -24,7 +27,9 @@ export const store = mutation({
       }
       return user._id;
     }
+  
 
+   
     // If it's a new identity, create a new `User`.
     return await ctx.db.insert("users", {
       name: identity.name ?? "Anonymous",

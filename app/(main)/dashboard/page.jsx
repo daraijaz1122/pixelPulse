@@ -7,7 +7,6 @@ import { Loader2, Plus } from "lucide-react";
 import { NewProjectModal } from "@/app/(main)/dashboard/_components/NewProjectModel";
 import ProjectGrid from "@/app/(main)/dashboard/_components/project-grid";
 import EmptyState from "./_components/Empty-State";
-import { BarLoader } from "react-spinners";
 
 const dashboard = () => {
   const [showNewProjectModal, setShowNewProjectModal] = useState(false);
@@ -40,9 +39,7 @@ const dashboard = () => {
         </div>
         {isLoading ? (
           <div className="flex items-center justify-center py-20">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-400">
-              <BarLoader width={100} height={5} />
-            </div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-400"></div>
           </div>
         ) : projects && projects.length > 0 ? (
           <ProjectGrid projects={projects} />

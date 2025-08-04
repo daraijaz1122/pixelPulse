@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
 import React from "react";
-import { Sparkles } from "lucide-react";
-import Image from "next/image";
+import { PictureInPicture, Sparkles } from "lucide-react";
+
 const EmptyState = ({ onCreateProject }) => {
   return (
     <div className="flex flex-col items-center justify-center py-20 text-center">
       <div className="w-24 h-24 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-600/20 flex items-center justify-center mb-6">
-        <Image className="h-12 w-12 text-cyan-400" />
+        <PictureInPicture className="h-12 w-12" />
       </div>
 
       <h3 className="text-2xl font-semibold text-white mb-3">

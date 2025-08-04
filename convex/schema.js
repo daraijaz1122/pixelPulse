@@ -5,7 +5,7 @@ import { v } from "convex/values";
 // @snippet start schema
 export default defineSchema({
     users: defineTable({
-        name: v.string(),
+        name: v.optional(v.string()),
         email: v.string(),
         tokenIdentifier: v.string(),
         imageUrl: v.optional(v.string()),
@@ -15,7 +15,7 @@ export default defineSchema({
         projectsUsed: v.number(),
         exportsThisMonth: v.number(),
 
-        createAt:v.number(),
+        createdAt:v.number(),
         lastActiveAt: v.number()
         
     })
